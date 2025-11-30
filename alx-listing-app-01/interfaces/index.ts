@@ -1,25 +1,22 @@
-import { StaticImageData } from "next/image";
+export interface Address {
+  city: string;
+  country: string;
+}
 
-interface thumbimageProps {
-  image: StaticImageData | string; // 👈 for static imports
+export interface Review {
+  avatar: string;
+  name: string;
+  rating: number;
+  comment: string;
 }
 
 export interface PropertyProps {
   name: string;
-  address: {
-    state: string;
-    city: string;
-    country: string;
-  };
   rating: number;
-  category: string[];
+  address: Address;
+  image: string;
+  description: string;
+  category: string[]; // Amenities
   price: number;
-  offers: {
-    bed: string;
-    shower: string;
-    occupants: string;
-  };
-  thumbimageProps: thumbimageProps;
-//   image: string;
-  discount: string;
+  reviews: Review[];
 }
